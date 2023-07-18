@@ -192,7 +192,7 @@ public class RadioTest {
 
     }
 
-        @Test
+    @Test
     public void prev1NumberStation() {
         Radio radio = new Radio();
         radio.setCurrentStation(2);
@@ -487,6 +487,19 @@ public class RadioTest {
 
         int expected = 0;
         int actual = radio.getCurrentVolume();
+
+        Assertions.assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void selectionStation() {
+        Radio radio = new Radio(26);
+
+        radio.setCurrentStation(19);
+
+        int expected = 19;
+        int actual = radio.getCurrentStation();
 
         Assertions.assertEquals(expected, actual);
 
