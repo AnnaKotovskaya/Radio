@@ -2,6 +2,10 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import ru.netology.radio.Radio;
 
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import ru.netology.radio.Radio;
+
 public class RadioTest {
 
     @Test
@@ -192,7 +196,7 @@ public class RadioTest {
 
     }
 
-        @Test
+    @Test
     public void prev1NumberStation() {
         Radio radio = new Radio();
         radio.setCurrentStation(2);
@@ -491,5 +495,6 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
 
     }
+
 
 }
