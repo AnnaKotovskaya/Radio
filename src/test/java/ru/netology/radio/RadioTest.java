@@ -2,6 +2,10 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import ru.netology.radio.Radio;
 
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import ru.netology.radio.Radio;
+
 public class RadioTest {
 
     @Test
@@ -100,6 +104,87 @@ public class RadioTest {
     public void limit5ValuesNumberStation() {
         Radio radio = new Radio();
 
+        radio.setCurrentStation(9);
+
+        int expected = 9;
+        int actual = radio.getCurrentStation();
+
+        Assertions.assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void limit6ValuesNumberStation() {
+        Radio radio = new Radio();
+
+        radio.setCurrentStation(10);
+
+        int expected = 0;
+        int actual = radio.getCurrentStation();
+
+        Assertions.assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void next1NumberStation() {
+        Radio radio = new Radio();
+        radio.setCurrentStation(3);
+
+        radio.next();
+
+        int expected = 4;
+        int actual = radio.getCurrentStation();
+
+        Assertions.assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void next2NumberStation() {
+        Radio radio = new Radio();
+        radio.setCurrentStation(0);
+
+        radio.next();
+
+        int expected = 1;
+        int actual = radio.getCurrentStation();
+
+        Assertions.assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void next3NumberStation() {
+        Radio radio = new Radio();
+        radio.setCurrentStation(1);
+
+        radio.next();
+
+        int expected = 2;
+        int actual = radio.getCurrentStation();
+
+        Assertions.assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void next4NumberStation() {
+        Radio radio = new Radio();
+        radio.setCurrentStation(8);
+
+        radio.next();
+
+        int expected = 9;
+        int actual = radio.getCurrentStation();
+
+        Assertions.assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void next5NumberStation() {
+        Radio radio = new Radio();
         radio.setCurrentStation(9);
 
         radio.next();
@@ -411,17 +496,5 @@ public class RadioTest {
 
     }
 
-    @Test
-    public void selectionStation() {
-        Radio radio = new Radio(26,19,5);
-
-        radio.setCurrentStation(19);
-
-        int expected = 19;
-        int actual = radio.getCurrentStation();
-
-        Assertions.assertEquals(expected, actual);
-
-    }
 
 }
